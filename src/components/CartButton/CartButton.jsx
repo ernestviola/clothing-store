@@ -1,5 +1,11 @@
+import { ShoppingBag } from '@mui/icons-material';
+
 const CartButton = () => {
-  return <img src='' alt='Cart Button' />;
+  return (
+    <button>
+      <ShoppingBag />
+    </button>
+  );
 };
 
 export default CartButton;

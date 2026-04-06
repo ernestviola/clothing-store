@@ -1,0 +1,6 @@
+.home {
+  background-image: url('../../assets/home.jpg');
+  background-size: cover;
+  background-position: 80% 50%; /* Move right, keep vertical center */
+  min-height: 120vh;
+}

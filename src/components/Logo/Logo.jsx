@@ -1,5 +1,5 @@
 const Logo = () => {
-  return <img src='' alt='Site Logo' />;
+  return <span>STORE</span>;
 };
 
 export default Logo;

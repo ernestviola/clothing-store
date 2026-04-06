@@ -1,6 +1,18 @@
 .nav {
+  position: fixed;
+  top: 40px;
+  left: 0;
+  right: 0;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  background-color: white;
+  height: 60px;
+  transition: top 0.3s ease;
+}
+
+.nav.scrolled {
+  top: 0;
 }
 
 .ul {

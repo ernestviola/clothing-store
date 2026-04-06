@@ -1,8 +1,8 @@
 import App from './App';
-import Store from './pages/Store.jsx';
+import Shop from './pages/Shop.jsx';
 import Cart from './pages/Cart.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
-import Home from './pages/Home.jsx';
+import Home from './pages/Home/Home.jsx';
 
 const routes = [
   {
@@ -10,7 +10,7 @@ const routes = [
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: '/store', element: <Store /> },
+      { path: '/shop', element: <Shop /> },
       { path: '/cart', element: <Cart /> },
     ],
     errorElement: <ErrorPage />,
