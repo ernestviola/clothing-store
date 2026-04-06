@@ -18,6 +18,8 @@
 .ul {
   display: flex;
   gap: 40px;
+  margin: 0;
+  padding-left: 40px;
 }
 
 .ul > li {
@@ -26,4 +28,14 @@
 
 .ul > li > a {
   text-decoration: none;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cartBtn {
+  padding-right: 40px;
 }

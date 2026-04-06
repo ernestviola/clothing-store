@@ -27,8 +27,12 @@ const Navbar = () => {
           <Link to='/Cart'>Cart</Link>
         </li>
       </ul>
-      <Logo />
-      <CartButton />
+      <div className={style.logo}>
+        <Logo />
+      </div>
+      <div className={style.cartBtn}>
+        <CartButton />
+      </div>
     </nav>
   );
 };
