@@ -7,7 +7,9 @@ const ItemCard = ({ item }) => {
 
   return (
     <div className={style.card}>
-      <img src={item.image} alt='' />
+      <div className={style.imgContainer}>
+        <img src={item.image} alt='' />
+      </div>
       <h3>{item.title}</h3>
       <div>
         <span className={style.price}>{item.price}</span>

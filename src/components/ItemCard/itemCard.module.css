@@ -1,9 +1,15 @@
-.card {
-  width: 300px;
+.imgContainer {
+  height: 300px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
-.card > img {
-  width: 300px;
+.imgContainer > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .card > button {

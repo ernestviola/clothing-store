@@ -16,7 +16,6 @@ const Shop = () => {
     fetchProducts();
   }, []);
 
-  console.log(products);
   return (
     <div className={style.container}>
       <h1>Shop</h1>
