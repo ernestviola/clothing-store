@@ -24,7 +24,7 @@ const Navbar = () => {
           <Link to='/shop'>Shop</Link>
         </li>
         <li>
-          <Link to='/Cart'>Cart</Link>
+          <Link to='/cart'>Cart</Link>
         </li>
       </ul>
       <div className={style.logo}>

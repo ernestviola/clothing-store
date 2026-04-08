@@ -1,0 +1,25 @@
+.card {
+  width: 300px;
+}
+
+.card > img {
+  width: 300px;
+}
+
+.card > button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.hidden {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

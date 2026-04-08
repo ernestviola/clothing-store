@@ -5,10 +5,12 @@ const CartButton = ({ items = [] }) => {
   const bagCount = items.length || 0;
   return (
     <button className={style.btn}>
-      <ShoppingBag />
-      {bagCount > 0 && (
-        <div className={style.bagCount}>{bagCount ? bagCount : 0}</div>
-      )}
+      <div className={style.bagIcon}>
+        <ShoppingBag />
+        {bagCount > 0 && (
+          <div className={style.bagCount}>{bagCount ? bagCount : 0}</div>
+        )}
+      </div>
     </button>
   );
 };

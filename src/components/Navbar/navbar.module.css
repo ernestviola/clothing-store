@@ -6,12 +6,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.673);
   height: 60px;
   transition: top 0.3s ease;
 }
 
 .nav.scrolled {
+  background-color: rgb(255, 255, 255);
   top: 0;
 }
 
