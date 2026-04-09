@@ -1,18 +1,25 @@
 import './App.css';
 import { Outlet } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import { createContext, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const CartContext = createContext(null);
+import CartContext from './context/CartContext';
 
 const App = () => {
-  const [cart, setCart] = useState(null);
+  const [cart, setCart] = useState(() => {
+    const saved = localStorage.getItem('cart');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
   return (
-    <CartContext value={cart}>
+    <CartContext.Provider value={{ cart, setCart }}>
       <Navbar />
       <Outlet />
-    </CartContext>
+    </CartContext.Provider>
   );
 };
 
