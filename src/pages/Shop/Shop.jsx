@@ -6,19 +6,19 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch('https://fakestoreapi.com/products');
+      const response = await fetch('https://dummyjson.com/products');
       if (response.ok) {
         const data = await response.json();
-        setProducts(data);
+        setProducts(data.products);
       }
     };
 
     fetchProducts();
   }, []);
+  console.log(products);
 
   return (
     <div className={style.container}>
-      <h1>Shop</h1>
       <div className={style.products}>
         {products.map((item) => {
           return (

@@ -1,26 +1,21 @@
-import { useState } from 'react';
 import style from './itemCard.module.css';
 import { ShoppingBagOutlined as ShoppingBag } from '@mui/icons-material';
 
 const ItemCard = ({ item }) => {
-  const [showDescription, setShowDescription] = useState(false);
-
   return (
     <div className={style.card}>
       <div className={style.imgContainer}>
-        <img src={item.image} alt='' />
+        <img src={item.images[0]} alt='' />
       </div>
-      <h3>{item.title}</h3>
-      <div>
-        <span className={style.price}>{item.price}</span>
+
+      <div className={style.purchaseRow}>
+        <span className={style.price}>${item.price.toFixed(2)}</span>
         <button className={style.btn}>
           <ShoppingBag sx={style.icon} />
         </button>
       </div>
-      <p className={showDescription ? '' : style.hidden}>{item.description}</p>
-      <button onClick={() => setShowDescription(!showDescription)}>
-        {!showDescription ? 'Show More' : 'Hide'}
-      </button>
+      <h3>{item.title}</h3>
+      <details>{item.description}</details>
     </div>
   );
 };

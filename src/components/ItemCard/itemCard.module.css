@@ -1,8 +1,10 @@
+.card {
+  height: 450px;
+}
+
 .imgContainer {
   height: 300px;
   width: 250px;
-  display: flex;
-  justify-content: center;
   margin: auto;
 }
 
@@ -12,6 +14,12 @@
   object-fit: contain;
 }
 
+details {
+  max-height: 100px;
+  cursor: pointer;
+  overflow-y: auto;
+}
+
 .card > button {
   cursor: pointer;
   display: flex;
@@ -19,9 +27,19 @@
   align-items: center;
 }
 
+.purchaseRow {
+  display: flex;
+  gap: 20px;
+  margin: 15px 0px;
+}
+
 .price {
   font-weight: 600;
   font-size: 28px;
+}
+
+.btn {
+  cursor: pointer;
 }
 
 .hidden {
