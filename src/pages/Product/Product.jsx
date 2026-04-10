@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import CartContext from '../../context/CartContext';
 
+import Loading from '../../components/Loading/Loading';
+
 const Product = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
@@ -35,7 +37,7 @@ const Product = () => {
   };
 
   console.log(data);
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading />;
   if (error) return <div>Trouble fetching data</div>;
 
   return (
@@ -43,7 +45,7 @@ const Product = () => {
       <h1>{data.title}</h1>
       <img src={data.images[0]} alt='Product Image' />
       <p>{data.description}</p>
-      <button onClick={() => addToCart(data.id)}>Add to cart</button>
+      <button onClick={() => addToCart(data.id)}>Add to bag</button>
     </div>
   );
 };

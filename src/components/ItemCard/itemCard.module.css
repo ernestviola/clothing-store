@@ -21,6 +21,11 @@ details {
   overflow-y: auto;
 }
 
+.link {
+  color: black;
+  text-decoration: none;
+}
+
 .card > button {
   cursor: pointer;
   display: flex;
