@@ -6,8 +6,15 @@ import CartContext from '../../context/CartContext';
 
 const CartButton = () => {
   const { cart } = useContext(CartContext);
-  console.log(cart.length);
-  const bagCount = cart.length || 0;
+  console.log(cart);
+
+  const bagCount = Object.entries(cart).reduce(
+    (previousValue, [key, value]) => {
+      return previousValue + value.count;
+    },
+    0,
+  );
+
   return (
     <button className={style.btn}>
       <div className={style.bagIcon}>

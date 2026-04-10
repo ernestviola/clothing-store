@@ -12,7 +12,6 @@ const ItemCard = ({ item }) => {
           <span className={style.price}>${item.price.toFixed(2)}</span>
         </div>
         <h3>{item.title}</h3>
-        <details>{item.description}</details>
       </div>
     </Link>
   );

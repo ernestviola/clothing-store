@@ -2,6 +2,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import CartContext from '../../context/CartContext';
 
+import style from './product.module.css';
+
 import Loading from '../../components/Loading/Loading';
 
 const Product = () => {
@@ -9,7 +11,7 @@ const Product = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  const { setCart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -33,7 +35,25 @@ const Product = () => {
   }, []);
 
   const addToCart = (item) => {
-    setCart((cart) => [...cart, item]);
+    let itemData;
+    if (!cart[item.title]) {
+      //
+      itemData = {
+        count: 1,
+        title: item.title,
+        price: item.price,
+        images: item.images,
+      };
+    } else {
+      itemData = cart[item.title];
+      itemData.count = itemData.count + 1;
+    }
+
+    const newCart = { ...cart };
+
+    newCart[item.title] = itemData;
+    console.log(newCart);
+    setCart(newCart);
   };
 
   console.log(data);
@@ -41,11 +61,13 @@ const Product = () => {
   if (error) return <div>Trouble fetching data</div>;
 
   return (
-    <div>
-      <h1>{data.title}</h1>
-      <img src={data.images[0]} alt='Product Image' />
-      <p>{data.description}</p>
-      <button onClick={() => addToCart(data.id)}>Add to bag</button>
+    <div className={style.container}>
+      <div className={style.product}>
+        <h1>{data.title}</h1>
+        <img src={data.images[0]} alt='Product Image' />
+        <p>{data.description}</p>
+        <button onClick={() => addToCart(data)}>Add to bag</button>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,11 @@
+.container {
+  margin-top: 200px;
+}
+
+.product {
+  border: 1px solid black;
+}
+
+.product > img {
+  height: 300px;
+}

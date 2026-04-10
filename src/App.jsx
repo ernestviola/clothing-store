@@ -8,7 +8,7 @@ import CartContext from './context/CartContext';
 const App = () => {
   const [cart, setCart] = useState(() => {
     const saved = localStorage.getItem('cart');
-    return saved ? JSON.parse(saved) : [];
+    return saved ? JSON.parse(saved) : {};
   });
 
   useEffect(() => {
