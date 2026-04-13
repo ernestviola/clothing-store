@@ -1,10 +1,16 @@
 import { render, screen } from '@testing-library/react';
-import { expect, describe, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('App Component', () => {
-  it('renders without crashing', () => {
-    render(<App />);
-    expect(screen.getByText('Hello App')).toBeInTheDocument();
+  it('Renders without crashing', () => {
+    render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>,
+    );
+
+    expect(screen.getByText('Home')).toBeInTheDocument();
   });
 });

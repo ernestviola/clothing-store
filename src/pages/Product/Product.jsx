@@ -34,7 +34,6 @@ const Product = () => {
     fetchProduct();
   }, []);
 
-  console.log(data);
   if (loading) return <Loading />;
   if (error) return <div>Trouble fetching data</div>;
 
