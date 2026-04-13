@@ -4,7 +4,7 @@ import Logo from '../Logo/Logo';
 import CartButton from '../CartButton/CartButton';
 import { useState, useEffect } from 'react';
 
-const Navbar = () => {
+const Navbar = ({ cartCount }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const Navbar = () => {
         <Logo />
       </div>
       <div className={style.cartBtn}>
-        <CartButton />
+        <CartButton cartCount={cartCount} />
       </div>
     </nav>
   );

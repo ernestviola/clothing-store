@@ -4,23 +4,16 @@ import { ShoppingBagOutlined as ShoppingBag } from '@mui/icons-material';
 
 import CartContext from '../../context/CartContext';
 
-const CartButton = () => {
+const CartButton = ({ cartCount }) => {
   const { cart } = useContext(CartContext);
   console.log(cart);
-
-  const bagCount = Object.entries(cart).reduce(
-    (previousValue, [key, value]) => {
-      return previousValue + value.count;
-    },
-    0,
-  );
 
   return (
     <button className={style.btn}>
       <div className={style.bagIcon}>
         <ShoppingBag />
-        {bagCount > 0 && (
-          <div className={style.bagCount}>{bagCount ? bagCount : 0}</div>
+        {cartCount > 0 && (
+          <div className={style.bagCount}>{cartCount ? cartCount : 0}</div>
         )}
       </div>
     </button>

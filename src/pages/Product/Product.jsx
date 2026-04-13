@@ -11,7 +11,7 @@ const Product = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  const { cart, setCart } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -33,28 +33,6 @@ const Product = () => {
 
     fetchProduct();
   }, []);
-
-  const addToCart = (item) => {
-    let itemData;
-    if (!cart[item.title]) {
-      //
-      itemData = {
-        count: 1,
-        title: item.title,
-        price: item.price,
-        images: item.images,
-      };
-    } else {
-      itemData = cart[item.title];
-      itemData.count = itemData.count + 1;
-    }
-
-    const newCart = { ...cart };
-
-    newCart[item.title] = itemData;
-    console.log(newCart);
-    setCart(newCart);
-  };
 
   console.log(data);
   if (loading) return <Loading />;
