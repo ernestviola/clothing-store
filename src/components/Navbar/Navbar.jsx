@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import style from './navbar.module.css';
 import Logo from '../Logo/Logo';
 import CartButton from '../CartButton/CartButton';
-import { useState, useEffect } from 'react';
 
 const Navbar = ({ cartCount }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,6 +36,10 @@ const Navbar = ({ cartCount }) => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  cartCount: PropTypes.number.isRequired,
 };
 
 export default Navbar;

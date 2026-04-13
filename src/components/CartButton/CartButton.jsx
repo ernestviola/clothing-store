@@ -1,13 +1,10 @@
-import { useContext } from 'react';
 import style from './cartButton.module.css';
+import PropTypes from 'prop-types';
 import { ShoppingBagOutlined as ShoppingBag } from '@mui/icons-material';
 
 import CartContext from '../../context/CartContext';
 
 const CartButton = ({ cartCount }) => {
-  const { cart } = useContext(CartContext);
-  console.log(cart);
-
   return (
     <button className={style.btn}>
       <div className={style.bagIcon}>
@@ -18,6 +15,10 @@ const CartButton = ({ cartCount }) => {
       </div>
     </button>
   );
+};
+
+CartButton.propTypes = {
+  cartCount: PropTypes.number.isRequired,
 };
 
 export default CartButton;
