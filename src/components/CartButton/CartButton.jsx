@@ -4,9 +4,9 @@ import { ShoppingBagOutlined as ShoppingBag } from '@mui/icons-material';
 
 import CartContext from '../../context/CartContext';
 
-const CartButton = ({ cartCount }) => {
+const CartButton = ({ cartCount, openDrawer }) => {
   return (
-    <button className={style.btn}>
+    <button className={style.btn} onClick={openDrawer}>
       <div className={style.bagIcon}>
         <ShoppingBag />
         {cartCount > 0 && (

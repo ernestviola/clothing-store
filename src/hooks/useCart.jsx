@@ -10,21 +10,21 @@ const useCart = () => {
     let itemData;
     const newCart = { ...cart };
 
-    if (!cart[item.title]) {
+    if (!newCart[item.title]) {
       itemData = {
         count: 1,
         title: item.title,
+        description: item.description,
         price: item.price,
         images: item.images,
       };
+      newCart[item.title] = itemData;
     } else {
-      itemData = newCart[item.title];
-      itemData.count = itemData.count + 1;
+      newCart[item.title].count = newCart[item.title].count + 1;
     }
 
-    newCart[item.title] = itemData;
-    console.log(newCart);
     setCart(newCart);
+    console.log(newCart);
   };
 
   const removeFromCart = (itemName) => {

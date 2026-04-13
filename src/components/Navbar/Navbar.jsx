@@ -5,7 +5,7 @@ import style from './navbar.module.css';
 import Logo from '../Logo/Logo';
 import CartButton from '../CartButton/CartButton';
 
-const Navbar = ({ cartCount }) => {
+const Navbar = ({ cartCount, openDrawer }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const Navbar = ({ cartCount }) => {
         <Logo />
       </div>
       <div className={style.cartBtn}>
-        <CartButton cartCount={cartCount} />
+        <CartButton cartCount={cartCount} openDrawer={openDrawer} />
       </div>
     </nav>
   );
