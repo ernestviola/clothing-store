@@ -1,3 +1,17 @@
+.closeBtn {
+  position: absolute;
+  cursor: pointer;
+  top: 8px;
+  right: 8px;
+  padding: 2px;
+  background-color: transparent;
+  border: none;
+}
+
+.closeBtn:hover {
+  color: rgb(60, 60, 60);
+}
+
 .backDrop {
   position: absolute;
   top: 0;
@@ -63,4 +77,9 @@
   100% {
     transform: translateX(500px);
   }
+}
+
+.products {
+  height: 80%;
+  border: 1px solid;
 }

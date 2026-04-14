@@ -5,9 +5,10 @@
  * each item should display with + and -
  */
 
+import { useEffect, useState } from 'react';
+import { Close } from '@mui/icons-material';
 import CartDrawerItem from '../CartDrawerItem/CartDrawerItem';
 import style from './cartDrawer.module.css';
-import { useEffect, useState } from 'react';
 
 const CartDrawer = ({ cart, closeDrawer, addToCart, removeFromCart }) => {
   const [isClosing, setIsClosing] = useState(false);
@@ -38,18 +39,23 @@ const CartDrawer = ({ cart, closeDrawer, addToCart, removeFromCart }) => {
           e.stopPropagation();
         }}
       >
-        <button onClick={handleClose}>X</button>
+        <button className={style.closeBtn} onClick={handleClose}>
+          <Close />
+        </button>
         <h1>Bag</h1>
-        {Object.entries(cart).map(([, v]) => {
-          return (
-            <CartDrawerItem
-              key={v.title}
-              itemData={v}
-              addToCart={addToCart}
-              removeFromCart={removeFromCart}
-            />
-          );
-        })}
+        <div className={style.products}>
+          {Object.entries(cart).map(([, v]) => {
+            return (
+              <CartDrawerItem
+                key={v.title}
+                itemData={v}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
+              />
+            );
+          })}
+        </div>
+        <button className={style.checkoutBtn}>Checkout</button>
       </div>
     </div>
   );
