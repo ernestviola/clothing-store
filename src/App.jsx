@@ -5,11 +5,13 @@ import Navbar from './components/Navbar/Navbar';
 import CartDrawer from './components/CartDrawer/CartDrawer';
 
 import CartContext from './context/CartContext';
+import DrawerContext from './context/DrawerContext';
 
 import useCart from './hooks/useCart';
 
 const App = () => {
   const cartOperations = useCart();
+
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
@@ -27,7 +29,9 @@ const App = () => {
         />
       )}
 
-      <Outlet />
+      <DrawerContext.Provider value={{ isDrawerOpen, setIsDrawerOpen }}>
+        <Outlet />
+      </DrawerContext.Provider>
     </CartContext.Provider>
   );
 };

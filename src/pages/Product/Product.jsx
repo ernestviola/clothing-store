@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import CartContext from '../../context/CartContext';
+import DrawerContext from '../../context/DrawerContext';
 
 import style from './product.module.css';
 
@@ -12,6 +13,7 @@ const Product = () => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
   const { addToCart } = useContext(CartContext);
+  const { setIsDrawerOpen } = useContext(DrawerContext);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -34,16 +36,34 @@ const Product = () => {
     fetchProduct();
   }, []);
 
+  const handleAddToCart = (data) => {
+    setIsDrawerOpen(true);
+    addToCart(data);
+  };
+
   if (loading) return <Loading />;
   if (error) return <div>Trouble fetching data</div>;
 
   return (
     <div className={style.container}>
       <div className={style.product}>
-        <h1>{data.title}</h1>
-        <img src={data.images[0]} alt='Product Image' />
-        <p>{data.description}</p>
-        <button onClick={() => addToCart(data)}>Add to bag</button>
+        <img
+          className={style.product__image}
+          src={data.images[0]}
+          alt={`Picture of ${data.title}`}
+        />
+
+        <div className={style.productDetails}>
+          <h1 className={style.productDetails__header}>{data.title}</h1>
+
+          <p className={style.productDetails__p}>{data.description}</p>
+          <button
+            className={style.productDetails__button}
+            onClick={() => handleAddToCart(data)}
+          >
+            Add to bag
+          </button>
+        </div>
       </div>
     </div>
   );
