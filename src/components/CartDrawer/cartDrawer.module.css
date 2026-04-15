@@ -52,7 +52,6 @@
   right: 0;
   height: 100vh;
   width: 500px;
-  padding: 8px;
   background-color: white;
   animation: show 0.2s ease forwards;
 }
@@ -81,13 +80,21 @@
   }
 }
 
+.cartContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
-  margin-top: 40px;
+  margin: 8px;
+  font-size: 18px;
 }
 
 .products {
-  height: 65%;
-  border: 1px solid;
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 10px;
 }
 
 .emptyCart {
@@ -111,4 +118,23 @@
 .bag {
   transform: scale(3);
   margin: 40px;
+}
+
+.checkoutBtn {
+  display: block;
+  margin: 20px auto;
+  cursor: pointer;
+  padding: 10px 50px;
+  font-size: 28px;
+  background-color: black;
+  border: none;
+  color: white;
+}
+
+.checkoutSection {
+  width: 100%;
+}
+
+.checkoutBtn:hover {
+  background-color: rgb(69, 69, 69);
 }

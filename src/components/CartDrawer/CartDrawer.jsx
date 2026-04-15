@@ -29,7 +29,7 @@ const EmptyCart = ({ closeDrawer }) => {
 
 const CartWithItems = ({ cart, addToCart, removeFromCart }) => {
   return (
-    <>
+    <div className={style.cartContainer}>
       <h1 className={style.header}>Bag</h1>
       <div className={style.products}>
         {Object.entries(cart).map(([, v]) => {
@@ -43,8 +43,10 @@ const CartWithItems = ({ cart, addToCart, removeFromCart }) => {
           );
         })}
       </div>
-      <button className={style.checkoutBtn}>Checkout</button>
-    </>
+      <div className={style.checkoutSection}>
+        <button className={style.checkoutBtn}>Checkout</button>
+      </div>
+    </div>
   );
 };
 
