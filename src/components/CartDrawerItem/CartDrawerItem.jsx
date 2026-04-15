@@ -17,7 +17,7 @@ const CartDrawerItem = ({ itemData, addToCart, removeFromCart }) => {
             >
               -
             </button>
-            {itemData.count}
+            <span className={style.count}>{itemData.count}</span>
             <button
               className={style.itemCountController__button}
               onClick={() => addToCart(itemData)}
