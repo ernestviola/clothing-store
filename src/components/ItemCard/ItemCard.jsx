@@ -11,7 +11,7 @@ const ItemCard = ({ item }) => {
         <div className={style.purchaseRow}>
           <span className={style.price}>${item.price.toFixed(2)}</span>
         </div>
-        <h3>{item.title}</h3>
+        <h3 className={style.title}>{item.title}</h3>
       </div>
     </Link>
   );

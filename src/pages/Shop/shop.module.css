@@ -4,8 +4,8 @@
 
 .products {
   display: grid;
-  gap: 2px;
-  row-gap: 160px;
+  gap: 8px;
+  row-gap: 40px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
   justify-content: center;
 }
