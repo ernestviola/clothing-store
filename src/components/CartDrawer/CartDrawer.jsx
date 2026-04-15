@@ -27,7 +27,7 @@ const EmptyCart = ({ closeDrawer }) => {
   );
 };
 
-const CartWithItems = ({ cart, addToCart, removeFromCart }) => {
+const CartWithItems = ({ cart, totalPrice, addToCart, removeFromCart }) => {
   return (
     <div className={style.cartContainer}>
       <h1 className={style.header}>Bag</h1>
@@ -44,6 +44,7 @@ const CartWithItems = ({ cart, addToCart, removeFromCart }) => {
         })}
       </div>
       <div className={style.checkoutSection}>
+        <span className={style.price}>Total: ${totalPrice}</span>
         <button className={style.checkoutBtn}>Checkout</button>
       </div>
     </div>
@@ -53,6 +54,7 @@ const CartWithItems = ({ cart, addToCart, removeFromCart }) => {
 const CartDrawer = ({
   cart,
   cartCount,
+  totalPrice,
   closeDrawer,
   addToCart,
   removeFromCart,
@@ -94,6 +96,7 @@ const CartDrawer = ({
         {cartCount > 0 && (
           <CartWithItems
             cart={cart}
+            totalPrice={totalPrice}
             addToCart={addToCart}
             removeFromCart={removeFromCart}
           />

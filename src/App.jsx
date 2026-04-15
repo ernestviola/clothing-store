@@ -24,6 +24,7 @@ const App = () => {
         <CartDrawer
           cart={cartOperations.cart}
           cartCount={cartOperations.cartCount}
+          totalPrice={cartOperations.totalCost}
           addToCart={cartOperations.addToCart}
           removeFromCart={cartOperations.removeFromCart}
           closeDrawer={() => setIsDrawerOpen(false)}

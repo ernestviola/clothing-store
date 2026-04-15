@@ -42,11 +42,15 @@ const useCart = () => {
     return previousValue + v.count;
   }, 0);
 
+  const totalCost = Object.entries(cart).reduce((previousValue, [, v]) => {
+    return previousValue + v.count * v.price;
+  }, 0);
+
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  return { cart, cartCount, setCart, addToCart, removeFromCart };
+  return { cart, cartCount, totalCost, setCart, addToCart, removeFromCart };
 };
 
 export default useCart;
