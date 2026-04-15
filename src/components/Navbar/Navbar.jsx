@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import NavLink from './NavLink/NavLink';
 import PropTypes from 'prop-types';
 import style from './navbar.module.css';
 import Logo from '../Logo/Logo';
@@ -15,17 +15,19 @@ const Navbar = ({ cartCount, openDrawer }) => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return (
     <nav className={`${style.nav} ${isScrolled ? style.scrolled : ''}`}>
       <ul className={style.ul}>
         <li>
-          <Link to='/'>Home</Link>
+          <NavLink to='/' timeout={0}>
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to='/shop'>Shop</Link>
-        </li>
-        <li>
-          <Link to='/cart'>Cart</Link>
+          <NavLink to='/shop' timeout={500}>
+            Shop
+          </NavLink>
         </li>
       </ul>
       <div className={style.logo}>

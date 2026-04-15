@@ -34,7 +34,7 @@ const Product = () => {
     };
 
     fetchProduct();
-  }, []);
+  }, [id]);
 
   const handleAddToCart = (data) => {
     setIsDrawerOpen(true);

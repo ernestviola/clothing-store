@@ -28,8 +28,28 @@
   list-style: none;
 }
 
-.ul > li > a {
+.navLink {
   text-decoration: none;
+  list-style: none;
+  color: black;
+  padding: 10px;
+  display: inline-block;
+  opacity: 0;
+}
+
+.animateLink {
+  animation: onLoad 0.2s ease-in forwards;
+}
+
+@keyframes onLoad {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .logo {
