@@ -13,11 +13,11 @@
 }
 
 .backDrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  min-height: 100vh;
+  height: 100vh;
   z-index: 200;
   animation: showBackDrop 0.2s ease forwards;
 }
@@ -47,10 +47,12 @@
 }
 
 .drawer {
+  height: inherit;
   position: absolute;
   right: 0;
-  min-height: 100vh;
+  height: 100vh;
   width: 500px;
+  padding: 8px;
   background-color: white;
   animation: show 0.2s ease forwards;
 }
@@ -79,7 +81,35 @@
   }
 }
 
+.header {
+  margin-top: 40px;
+}
+
 .products {
-  height: 80%;
+  margin-top: 10px;
+  height: 65%;
   border: 1px solid;
+}
+
+.emptyCart {
+  margin-top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.link {
+  color: black;
+}
+
+.link:hover {
+  color: rgb(69, 69, 69);
+}
+
+.bag {
+  transform: scale(3);
+  margin: 40px;
 }

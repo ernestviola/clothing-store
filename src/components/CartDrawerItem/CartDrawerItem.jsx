@@ -1,15 +1,32 @@
+import style from './cartDrawerItem.module.css';
+
 const CartDrawerItem = ({ itemData, addToCart, removeFromCart }) => {
+  const img = itemData.images ? itemData.images[0] : '';
   return (
-    <div>
-      <img src={itemData.images[0]} alt='' />
-      <h2>{itemData.title}</h2>
-      <p>{itemData.description}</p>
+    <div className={style.container}>
+      <img src={img} alt={`Picture of ${itemData.title}`} />
       <div>
-        <button onClick={() => removeFromCart(itemData.title)}>-</button>
-        {itemData.count}
-        <button onClick={() => addToCart(itemData)}>+</button>
+        <h2>{itemData.title}</h2>
+        <p>{itemData.description}</p>
+        <div className={style.priceAndCount}>
+          <span>${itemData.price}</span>
+          <div className={style.itemCountController}>
+            <button
+              className={style.itemCountController__button}
+              onClick={() => removeFromCart(itemData.title)}
+            >
+              -
+            </button>
+            {itemData.count}
+            <button
+              className={style.itemCountController__button}
+              onClick={() => addToCart(itemData)}
+            >
+              +
+            </button>
+          </div>
+        </div>
       </div>
-      <span>{itemData.price}</span>
     </div>
   );
 };

@@ -7,6 +7,7 @@ const useCart = () => {
   });
 
   const addToCart = (item) => {
+    console.log(item);
     let itemData;
     const newCart = { ...cart };
 
@@ -24,7 +25,6 @@ const useCart = () => {
     }
 
     setCart(newCart);
-    console.log(newCart);
   };
 
   const removeFromCart = (itemName) => {

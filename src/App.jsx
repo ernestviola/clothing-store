@@ -23,6 +23,7 @@ const App = () => {
       {isDrawerOpen && (
         <CartDrawer
           cart={cartOperations.cart}
+          cartCount={cartOperations.cartCount}
           addToCart={cartOperations.addToCart}
           removeFromCart={cartOperations.removeFromCart}
           closeDrawer={() => setIsDrawerOpen(false)}

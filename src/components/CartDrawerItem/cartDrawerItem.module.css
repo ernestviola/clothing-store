@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+}
+
+.container > img {
+  height: 200px;
+}
+
+.priceAndCount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.itemCountController {
+}
+
+.itemCountController__button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}

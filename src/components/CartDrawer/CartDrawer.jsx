@@ -6,11 +6,55 @@
  */
 
 import { useEffect, useState } from 'react';
-import { Close } from '@mui/icons-material';
+import { Close, ShoppingBagOutlined } from '@mui/icons-material';
 import CartDrawerItem from '../CartDrawerItem/CartDrawerItem';
 import style from './cartDrawer.module.css';
+import { Link } from 'react-router-dom';
 
-const CartDrawer = ({ cart, closeDrawer, addToCart, removeFromCart }) => {
+const EmptyCart = ({ closeDrawer }) => {
+  return (
+    <div className={style.emptyCart}>
+      <ShoppingBagOutlined className={style.bag} />
+      <p>Your bag is empty!</p>
+      <span>
+        Lets go{' '}
+        <Link to='/shop' className={style.link} onClick={closeDrawer}>
+          shopping
+        </Link>{' '}
+        ;)
+      </span>
+    </div>
+  );
+};
+
+const CartWithItems = ({ cart, addToCart, removeFromCart }) => {
+  return (
+    <>
+      <h1 className={style.header}>Bag</h1>
+      <div className={style.products}>
+        {Object.entries(cart).map(([, v]) => {
+          return (
+            <CartDrawerItem
+              key={v.title}
+              itemData={v}
+              addToCart={addToCart}
+              removeFromCart={removeFromCart}
+            />
+          );
+        })}
+      </div>
+      <button className={style.checkoutBtn}>Checkout</button>
+    </>
+  );
+};
+
+const CartDrawer = ({
+  cart,
+  cartCount,
+  closeDrawer,
+  addToCart,
+  removeFromCart,
+}) => {
   const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
@@ -28,6 +72,7 @@ const CartDrawer = ({ cart, closeDrawer, addToCart, removeFromCart }) => {
       closeDrawer();
     }, 300);
   };
+
   return (
     <div
       className={`${style.backDrop} ${isClosing ? style.hideBackDrop : ''}`}
@@ -42,20 +87,15 @@ const CartDrawer = ({ cart, closeDrawer, addToCart, removeFromCart }) => {
         <button className={style.closeBtn} onClick={handleClose}>
           <Close />
         </button>
-        <h1>Bag</h1>
-        <div className={style.products}>
-          {Object.entries(cart).map(([, v]) => {
-            return (
-              <CartDrawerItem
-                key={v.title}
-                itemData={v}
-                addToCart={addToCart}
-                removeFromCart={removeFromCart}
-              />
-            );
-          })}
-        </div>
-        <button className={style.checkoutBtn}>Checkout</button>
+
+        {cartCount === 0 && <EmptyCart closeDrawer={closeDrawer} />}
+        {cartCount > 0 && (
+          <CartWithItems
+            cart={cart}
+            addToCart={addToCart}
+            removeFromCart={removeFromCart}
+          />
+        )}
       </div>
     </div>
   );
