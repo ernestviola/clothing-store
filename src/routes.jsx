@@ -1,9 +1,9 @@
 import App from './App';
 import Shop from './pages/Shop/Shop.jsx';
-import Cart from './pages/Cart.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import Home from './pages/Home/Home.jsx';
 import Product from './pages/Product/Product.jsx';
+import Checkout from './pages/Checkout/Checkout.jsx';
 
 const routes = [
   {
@@ -12,7 +12,7 @@ const routes = [
     children: [
       { index: true, element: <Home /> },
       { path: '/shop', element: <Shop /> },
-      { path: '/cart', element: <Cart /> },
+      { path: '/checkout', element: <Checkout /> },
       {
         path: '/product/:id',
         element: <Product />,

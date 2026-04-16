@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+}
+
+.container > img {
+  height: 100px;
+}
+
+.title {
+  font-size: 16px;
+}
+
+.priceAndCount {
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.itemCountController {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.itemCountController__button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.count {
+  text-align: center;
+  width: 20px;
+}

@@ -27,7 +27,13 @@ const EmptyCart = ({ closeDrawer }) => {
   );
 };
 
-const CartWithItems = ({ cart, totalPrice, addToCart, removeFromCart }) => {
+const CartWithItems = ({
+  cart,
+  totalPrice,
+  addToCart,
+  removeFromCart,
+  closeDrawer,
+}) => {
   return (
     <div className={style.cartContainer}>
       <h1 className={style.header}>Bag</h1>
@@ -45,7 +51,13 @@ const CartWithItems = ({ cart, totalPrice, addToCart, removeFromCart }) => {
       </div>
       <div className={style.checkoutSection}>
         <span className={style.price}>Total: ${totalPrice}</span>
-        <button className={style.checkoutBtn}>Checkout</button>
+        <Link
+          to='/checkout'
+          onClick={closeDrawer}
+          className={style.checkoutBtn}
+        >
+          Checkout
+        </Link>
       </div>
     </div>
   );
@@ -99,6 +111,7 @@ const CartDrawer = ({
             totalPrice={totalPrice}
             addToCart={addToCart}
             removeFromCart={removeFromCart}
+            closeDrawer={closeDrawer}
           />
         )}
       </div>

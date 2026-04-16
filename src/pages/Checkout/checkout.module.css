@@ -1,0 +1,56 @@
+.container {
+  padding-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  border: 1px solid black;
+  max-width: 900px;
+  margin: 0px 10px;
+}
+
+.main__content {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 60vh;
+}
+
+.form {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-inline-size: 0;
+}
+
+.form legend {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input {
+  border: 1px solid rgb(161, 161, 161);
+  border-radius: 15px;
+  padding: 2px 8px;
+}
+
+.row > * {
+  flex: 1 0 200px;
+}
+
+.products {
+  flex: 0 1 300px;
+}
