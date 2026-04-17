@@ -147,3 +147,9 @@
   font-size: 22px;
   font-weight: 600;
 }
+
+@media screen and (max-width: 600px) {
+  .drawer {
+    width: 100%;
+  }
+}

@@ -3,7 +3,7 @@
 }
 
 .container > img {
-  height: 200px;
+  max-height: 200px;
 }
 
 .priceAndCount {
@@ -16,7 +16,7 @@
 .itemCountController {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 10px;
 }
 
 .itemCountController__button {

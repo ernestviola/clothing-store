@@ -24,7 +24,7 @@
 .itemCountController {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 10px;
 }
 
 .itemCountController__button {
