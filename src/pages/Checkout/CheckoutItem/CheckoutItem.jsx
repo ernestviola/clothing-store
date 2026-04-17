@@ -5,7 +5,7 @@ const CheckoutItem = ({ itemData, addToCart, removeFromCart }) => {
   return (
     <div className={style.container}>
       <img src={img} alt={`Picture of ${itemData.title}`} />
-      <div>
+      <div className={style.details}>
         <p className={style.title}>{itemData.title}</p>
         <div className={style.priceAndCount}>
           <span>${itemData.price}</span>
