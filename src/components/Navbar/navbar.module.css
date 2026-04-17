@@ -53,6 +53,14 @@
   cursor: pointer;
 }
 
+.hamburgerIcon {
+  transition: 0.2s ease;
+}
+
+.hamburgerIcon:hover {
+  transform: translateY(-3px);
+}
+
 @media screen and (max-width: 600px) {
   .ul > li {
     display: none;

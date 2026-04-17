@@ -38,7 +38,9 @@ const Navbar = ({ cartCount, openDrawer, openMenu }) => {
         <div className={style.right}>
           <CartButton cartCount={cartCount} openDrawer={openDrawer} />
           <button className={style.hamburger} onClick={openMenu}>
-            <Menu />
+            <div className={style.hamburgerIcon}>
+              <Menu />
+            </div>
           </button>
         </div>
       </div>
