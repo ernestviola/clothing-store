@@ -11,26 +11,42 @@
   margin: 0px 10px;
 }
 
+.header {
+  margin: 4px 8px;
+}
+
 .main__content {
   display: flex;
   flex-wrap: wrap;
   min-height: 60vh;
 }
 
-.form {
+.form__container {
   flex: 1 1 400px;
-  display: flex;
-  flex-direction: column;
 }
 
-.form fieldset {
+.formViewport {
+  border: 1px solid black;
+  overflow: hidden;
+  width: 100%;
+}
+
+.formSlider {
+  width: 300%;
+  display: flex;
+  transition: 0.5s ease;
+}
+
+.formSlider > fieldset {
+  width: calc(100% / 3);
+  min-width: 0;
   border: none;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   min-inline-size: 0;
 }
 
-.form legend {
+.formSlider > fieldset > legend {
   font-size: 20px;
   font-weight: 600;
   padding: 0;
@@ -39,18 +55,34 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.5em;
+  margin: 0.5em 0px;
 }
 
-input {
+.row > input {
   border: 1px solid rgb(161, 161, 161);
   border-radius: 15px;
-  padding: 2px 8px;
+  padding: 4px 10px;
+  flex: 1 1 auto;
+  min-width: 80px;
 }
 
-.row > * {
-  flex: 1 0 200px;
+.formCircle {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 100%;
+  border: 1px solid black;
+  background-color: transparent;
+  margin: 2px;
+}
+
+.formCircleActive {
+  background-color: black;
 }
 
 .products {
   flex: 0 1 300px;
+}
+
+.pay {
 }
