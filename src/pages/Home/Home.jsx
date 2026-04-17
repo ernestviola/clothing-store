@@ -6,10 +6,7 @@ const Home = () => {
     <div className={style.home}>
       <div className={style.cta}>
         <h1>Best items in the world!</h1>
-        <p>
-          The finest in workout material. Tested for endurance and longevity in
-          our labs in California.
-        </p>
+        <p>Get in here and buy some stuff</p>
       </div>
       <Link className={style.link} to='/shop'>
         Shop Now
