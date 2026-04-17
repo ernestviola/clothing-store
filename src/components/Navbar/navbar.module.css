@@ -3,13 +3,17 @@
   top: 40px;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: rgba(255, 255, 255, 0.673);
   height: 80px;
   transition: top 0.2s ease;
   z-index: 100;
+}
+
+.desktopNav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav.scrolled {
@@ -28,36 +32,32 @@
   list-style: none;
 }
 
-.navLink {
-  text-decoration: none;
-  list-style: none;
-  color: black;
-  padding: 10px;
-  display: inline-block;
-  opacity: 0;
-}
-
-.animateLink {
-  animation: onLoad 0.2s ease-in forwards;
-}
-
-@keyframes onLoad {
-  0% {
-    transform: translateY(-10px);
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 .logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.cartBtn {
-  padding-right: 40px;
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-right: 20px;
+}
+
+.hamburger {
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .ul > li {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
 }

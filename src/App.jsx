@@ -8,17 +8,20 @@ import CartContext from './context/CartContext';
 import DrawerContext from './context/DrawerContext';
 
 import useCart from './hooks/useCart';
+import MenuDrawer from './components/Navbar/MenuDrawer/MenuDrawer';
 
 const App = () => {
   const cartOperations = useCart();
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <CartContext.Provider value={cartOperations}>
       <Navbar
         cartCount={cartOperations.cartCount}
         openDrawer={() => setIsDrawerOpen(true)}
+        openMenu={() => setIsMenuOpen(true)}
       />
       {isDrawerOpen && (
         <CartDrawer
@@ -30,6 +33,7 @@ const App = () => {
           closeDrawer={() => setIsDrawerOpen(false)}
         />
       )}
+      {isMenuOpen && <MenuDrawer closeMenu={() => setIsMenuOpen(false)} />}
 
       <DrawerContext.Provider value={{ isDrawerOpen, setIsDrawerOpen }}>
         <Outlet />

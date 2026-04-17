@@ -1,0 +1,56 @@
+.backDrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 200;
+  animation: showBackDrop 0.2s ease forwards;
+}
+
+@keyframes showBackDrop {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 0.689);
+  }
+}
+.menu {
+  position: absolute;
+  right: 0;
+  height: 100vh;
+  background-color: white;
+  width: 40%;
+}
+
+.header {
+  margin: 8px 16px;
+}
+
+.closeBtn {
+  position: absolute;
+  cursor: pointer;
+  top: 8px;
+  right: 8px;
+  padding: 2px;
+  background-color: transparent;
+  border: none;
+}
+
+.closeBtn:hover {
+  color: rgb(60, 60, 60);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 400px) {
+  .menu {
+    width: 100%;
+  }
+}
