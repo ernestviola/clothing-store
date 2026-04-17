@@ -60,4 +60,9 @@
   .hamburger {
     display: block;
   }
+
+  .logo {
+    transform: translateX(0);
+    left: 20px;
+  }
 }
