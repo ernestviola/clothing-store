@@ -19,10 +19,11 @@
   display: flex;
   flex-wrap: wrap;
   min-height: 60vh;
+  min-width: 320px;
 }
 
 .form__container {
-  flex: 1 1 400px;
+  flex: 1 0 320px;
 }
 
 .formViewport {
@@ -34,10 +35,12 @@
 .formSlider {
   width: 300%;
   display: flex;
+  flex-wrap: wrap;
   transition: 0.5s ease;
 }
 
 .formSlider > fieldset {
+  flex-shrink: 1;
   width: calc(100% / 3);
   min-width: 0;
   border: none;
@@ -63,8 +66,7 @@
   border: 1px solid rgb(161, 161, 161);
   border-radius: 15px;
   padding: 4px 10px;
-  flex: 1 1 auto;
-  min-width: 80px;
+  flex: 1 0 auto;
 }
 
 .formCircle {
