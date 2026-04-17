@@ -4,7 +4,10 @@ import style from './logo.module.css';
 const Logo = () => {
   const [rotation, setRotation] = useState(0);
   const clickLogo = () => {
-    const rand = Math.floor(Math.random() * 1081);
+    const rand =
+      Math.random() > 0.5
+        ? 1 * Math.floor(Math.random() * 1081)
+        : -1 * Math.floor(Math.random() * 1081);
     setRotation(rand);
   };
 
