@@ -17,12 +17,50 @@
     background-color: rgba(0, 0, 0, 0.689);
   }
 }
+
+.hideBackDrop {
+  animation: hideBackDrop 0.2s ease forwards;
+}
+
+@keyframes hideBackDrop {
+  0% {
+    background-color: rgba(0, 0, 0, 0.689);
+  }
+
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
 .menu {
   position: absolute;
   right: 0;
   height: 100vh;
   background-color: white;
   width: 40%;
+  animation: show 0.2s ease forwards;
+}
+
+@keyframes show {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translate(0%);
+  }
+}
+
+.hide {
+  animation: hide 0.2s ease forwards;
+}
+
+@keyframes hide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translate(100%);
+  }
 }
 
 .header {
