@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import style from './logo.module.css';
 
 const Logo = () => {
-  const [rotation, setRotation] = useState(0);
+  const [rotation, setRotation] = useState(540);
   const clickLogo = () => {
     const rand =
       Math.random() > 0.5
